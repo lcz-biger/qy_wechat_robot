@@ -1398,15 +1398,15 @@ const breederList = [
   },
   {
     time: '2021-05-26',
-    breeder: '李露瑶'
+    breeder: '周飞龙'
   },
   {
     time: '2021-05-27',
-    breeder: '李花花'
+    breeder: '周飞龙'
   },
   {
     time: '2021-05-28',
-    breeder: '程斌'
+    breeder: '周飞龙'
   },
   {
     time: '2021-05-29',
@@ -1418,7 +1418,127 @@ const breederList = [
   },
   {
     time: '2021-05-31',
+    breeder: '周飞龙'
+  },
+  {
+    time: '2021-06-01',
+    breeder: '顾丽金'
+  },
+  {
+    time: '2021-06-02',
+    breeder: '朱磊'
+  },
+  {
+    time: '2021-06-03',
+    breeder: '李露瑶'
+  },
+  {
+    time: '2021-06-04',
+    breeder: '李花花'
+  },
+  {
+    time: '2021-06-05',
+    breeder: '程斌'
+  },
+  {
+    time: '2021-06-06',
+    breeder: '刘婧'
+  },
+  {
+    time: '2021-06-07',
+    breeder: '王月轩'
+  },
+  {
+    time: '2021-06-08',
+    breeder: '王月轩'
+  },
+  {
+    time: '2021-06-09',
+    breeder: '王月轩'
+  },
+  {
+    time: '2021-06-10',
+    breeder: '王月轩'
+  },
+  {
+    time: '2021-06-11',
+    breeder: '王月轩'
+  },
+  {
+    time: '2021-06-12',
+    breeder: '胡亥'
+  },
+  {
+    time: '2021-06-13',
+    breeder: '胡亥'
+  },
+  {
+    time: '2021-06-14',
+    breeder: '胡亥'
+  },
+  {
+    time: '2021-06-15',
+    breeder: '周飞龙'
+  },
+  {
+    time: '2021-06-16',
+    breeder: '夏越'
+  },
+  {
+    time: '2021-06-17',
+    breeder: '高翔'
+  },
+  {
+    time: '2021-06-18',
+    breeder: '毛凯迪'
+  },
+  {
+    time: '2021-06-19',
+    breeder: '程斌'
+  },
+  {
+    time: '2021-06-20',
+    breeder: '徐琳宇'
+  },
+  {
+    time: '2021-06-21',
+    breeder: '谭月峰'
+  },
+  {
+    time: '2021-06-22',
+    breeder: '李赐中'
+  },
+  {
+    time: '2021-06-23',
+    breeder: '管寅'
+  },
+  {
+    time: '2021-06-24',
+    breeder: '张斌'
+  },
+  {
+    time: '2021-06-25',
     breeder: '许婷婷'
+  },
+  {
+    time: '2021-06-26',
+    breeder: '蒋泽敏'
+  },
+  {
+    time: '2021-06-27',
+    breeder: '徐琳宇'
+  },
+  {
+    time: '2021-06-28',
+    breeder: '闫芮静'
+  },
+  {
+    time: '2021-06-29',
+    breeder: '董孟兴'
+  },
+  {
+    time: '2021-06-30',
+    breeder: '岳康慧'
   }
 ]
 module.exports = {
