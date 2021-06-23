@@ -1329,6 +1329,11 @@ const breeders = [
       62,
       3
     ]
+  },
+  {
+    name: "毛心蕊",
+    userid: "MaoXinRui",
+    department: [6]
   }
 ]
 const breederList = [
@@ -1539,6 +1544,130 @@ const breederList = [
   {
     time: '2021-06-30',
     breeder: '岳康慧'
+  },
+  {
+    time: '2021-07-01',
+    breeder: '顾丽金'
+  },
+  {
+    time: '2021-07-02',
+    breeder: '朱磊'
+  },
+  {
+    time: '2021-07-03',
+    breeder: '蒋泽敏'
+  },
+  {
+    time: '2021-07-04',
+    breeder: '徐琳宇'
+  },
+  {
+    time: '2021-07-05',
+    breeder: '李露瑶'
+  },
+  {
+    time: '2021-07-06',
+    breeder: '李花花'
+  },
+  {
+    time: '2021-07-07',
+    breeder: '张斌'
+  },
+  {
+    time: '2021-07-08',
+    breeder: '高翔'
+  },
+  {
+    time: '2021-07-09',
+    breeder: '毛凯迪'
+  },
+  {
+    time: '2021-07-10',
+    breeder: '刘婧'
+  },
+  {
+    time: '2021-07-11',
+    breeder: '徐琳宇'
+  },
+  {
+    time: '2021-07-12',
+    breeder: '许婷婷'
+  },
+  {
+    time: '2021-07-13',
+    breeder: '毛心蕊'
+  },
+  {
+    time: '2021-07-14',
+    breeder: '李花花'
+  },
+  {
+    time: '2021-07-15',
+    breeder: '周飞龙'
+  },
+  {
+    time: '2021-07-16',
+    breeder: '夏越'
+  },
+  {
+    time: '2021-07-17',
+    breeder: '蒋泽敏'
+  },
+  {
+    time: '2021-07-18',
+    breeder: '徐琳宇'
+  },
+  {
+    time: '2021-07-19',
+    breeder: '李露瑶'
+  },
+  {
+    time: '2021-07-20',
+    breeder: '李花花'
+  },
+  {
+    time: '2021-07-21',
+    breeder: '谭月峰'
+  },
+  {
+    time: '2021-07-22',
+    breeder: '李赐中'
+  },
+  {
+    time: '2021-07-23',
+    breeder: '管寅'
+  },
+  {
+    time: '2021-07-24',
+    breeder: '刘婧'
+  },
+  {
+    time: '2021-07-25',
+    breeder: '徐琳宇'
+  },
+  {
+    time: '2021-07-26',
+    breeder: '张斌'
+  },
+  {
+    time: '2021-07-27',
+    breeder: '顾丽金'
+  },
+  {
+    time: '2021-07-28',
+    breeder: '闫芮静'
+  },
+  {
+    time: '2021-07-29',
+    breeder: '董孟兴'
+  },
+  {
+    time: '2021-07-30',
+    breeder: '岳康慧'
+  },
+  {
+    time: '2021-07-31',
+    breeder: '蒋泽敏'
   }
 ]
 module.exports = {
