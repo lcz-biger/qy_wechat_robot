@@ -12,7 +12,8 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.21.1",
-    "dayjs": "^1.10.4"
+    "dayjs": "^1.10.4",
+    "mysql2": "^2.2.5"
   },
   "devDependencies": {
     "ts-node": "^9.1.1",
