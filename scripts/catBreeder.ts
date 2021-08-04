@@ -16,7 +16,7 @@ const messagePush:() => void = async() => {
     const params = {
       msgtype: 'text',
       text: {
-        content: `今日铲屎官【<@${breederUserId}>】 \n表格地址：https://doc.weixin.qq.com/txdoc/word?scode=AN8AYAcVAAYFhfENK0AFIALwYWAFY&docid=w2_ABgALgYWAFY0Pz0LadSQECXlthS4V&type=0`,
+        content: `今日铲屎官【<@${breederUserId}>】,记得用湿巾擦擦别墅地面，喷喷消毒水。 \n表格地址：https://doc.weixin.qq.com/txdoc/word?scode=AN8AYAcVAAYFhfENK0AFIALwYWAFY&docid=w2_ABgALgYWAFY0Pz0LadSQECXlthS4V&type=0`,
       }
     }
     axios.post('https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=76fc80cd-9273-4232-8e11-44f6c0147342',params)
@@ -24,7 +24,7 @@ const messagePush:() => void = async() => {
     const params = {
       msgtype: 'text',
       text: {
-        content: '今日推送有错误，建议查查数据库。【<@LiCiZhong>】',
+        content: '今日推送有错误，建议查查数据库。skr skr【<@LiCiZhong>】',
       }
     }
     axios.post('https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=76fc80cd-9273-4232-8e11-44f6c0147342',params)
