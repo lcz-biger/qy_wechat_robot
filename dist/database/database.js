@@ -1,9 +1,10 @@
 "use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
         function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
@@ -42,10 +43,10 @@ var promise_1 = __importDefault(require("mysql2/promise"));
 var Database = /** @class */ (function () {
     function Database() {
         this.connection = promise_1.default.createConnection({
-            host: 'rm-bp1qi435nzp8scfidwo.mysql.rds.aliyuncs.com',
-            user: 'duoke_oa',
+            host: 'rm-bp11yor291pf2of1duo.mysql.rds.aliyuncs.com',
+            user: 'robot',
             database: 'robot',
-            password: '5mshx9jQBGwloAYz',
+            password: 'sCnCi7Ym9cM2RpLq',
             dateStrings: true,
         });
     }

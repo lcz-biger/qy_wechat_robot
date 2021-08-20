@@ -4,10 +4,10 @@ class Database {
   connection: Promise<Connection>
   constructor() {
     this.connection = mysql.createConnection({
-      host: 'rm-bp1qi435nzp8scfidwo.mysql.rds.aliyuncs.com',
-      user: 'duoke_oa',
+      host: 'rm-bp11yor291pf2of1duo.mysql.rds.aliyuncs.com',
+      user: 'robot',
       database: 'robot',
-      password: '5mshx9jQBGwloAYz',
+      password: 'sCnCi7Ym9cM2RpLq',
       dateStrings : true,
     })
   }

@@ -1,9 +1,10 @@
 "use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
         function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
@@ -37,13 +38,13 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.cat_breeder_main_handler = void 0;
 var axios_1 = __importDefault(require("axios"));
 var dayjs_1 = __importDefault(require("dayjs"));
 var database_1 = __importDefault(require("../database/database"));
 var today = dayjs_1.default().format('YYYY-MM-DD');
-var messagePush = function () { return __awaiter(_this, void 0, void 0, function () {
+var messagePush = function () { return __awaiter(void 0, void 0, void 0, function () {
     var database, query, result, userId, breederQuery, breederResult, breederUserId, params, e_1, params;
     return __generator(this, function (_a) {
         switch (_a.label) {
@@ -84,6 +85,7 @@ var messagePush = function () { return __awaiter(_this, void 0, void 0, function
         }
     });
 }); };
-exports.cat_breeder_main_handler = function () {
+var cat_breeder_main_handler = function () {
     return messagePush();
 };
+exports.cat_breeder_main_handler = cat_breeder_main_handler;
