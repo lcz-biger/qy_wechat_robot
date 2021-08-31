@@ -5,9 +5,9 @@ import Database from '../database/database'
 const today = dayjs().format('YYYY-MM-DD')
 
 const messagePush:() => void = async() => {
-  const database = new Database()
-  const query = `select * from cat where FROM_UNIXTIME(UNIX_TIMESTAMP(date), '%Y-%m-%d') = '${today}'`
   try {
+    const database = new Database()
+    const query = `select * from cat where FROM_UNIXTIME(UNIX_TIMESTAMP(date), '%Y-%m-%d') = '${today}'`
     const result:any = await database.query(query) || [[{}]]
     const userId = result[0][0].user_id
     const breederQuery = `select * from users where id=${userId}`
@@ -24,7 +24,7 @@ const messagePush:() => void = async() => {
     const params = {
       msgtype: 'text',
       text: {
-        content: '今日推送有错误，建议查查数据库。skr skr【<@LiCiZhong>】',
+        content: '今日推送数据有误，随机挑选一名幸运观众【<@ZhangBin>】',
       }
     }
     axios.post('https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=76fc80cd-9273-4232-8e11-44f6c0147342',params)

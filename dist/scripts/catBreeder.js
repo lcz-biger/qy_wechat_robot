@@ -49,18 +49,16 @@ var messagePush = function () { return __awaiter(void 0, void 0, void 0, functio
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
+                _a.trys.push([0, 3, , 4]);
                 database = new database_1.default();
                 query = "select * from cat where FROM_UNIXTIME(UNIX_TIMESTAMP(date), '%Y-%m-%d') = '" + today + "'";
-                _a.label = 1;
-            case 1:
-                _a.trys.push([1, 4, , 5]);
                 return [4 /*yield*/, database.query(query)];
-            case 2:
+            case 1:
                 result = (_a.sent()) || [[{}]];
                 userId = result[0][0].user_id;
                 breederQuery = "select * from users where id=" + userId;
                 return [4 /*yield*/, database.query(breederQuery)];
-            case 3:
+            case 2:
                 breederResult = (_a.sent()) || [[{}]];
                 breederUserId = breederResult[0][0].username;
                 params = {
@@ -70,18 +68,18 @@ var messagePush = function () { return __awaiter(void 0, void 0, void 0, functio
                     }
                 };
                 axios_1.default.post('https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=76fc80cd-9273-4232-8e11-44f6c0147342', params);
-                return [3 /*break*/, 5];
-            case 4:
+                return [3 /*break*/, 4];
+            case 3:
                 e_1 = _a.sent();
                 params = {
                     msgtype: 'text',
                     text: {
-                        content: '今日推送有错误，建议查查数据库。skr skr【<@LiCiZhong>】',
+                        content: '今日推送数据有误，随机挑选一名幸运观众【<@ZhangBin>】',
                     }
                 };
                 axios_1.default.post('https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=76fc80cd-9273-4232-8e11-44f6c0147342', params);
-                return [3 /*break*/, 5];
-            case 5: return [2 /*return*/];
+                return [3 /*break*/, 4];
+            case 4: return [2 /*return*/];
         }
     });
 }); };
