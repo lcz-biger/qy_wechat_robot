@@ -74,7 +74,7 @@ var messagePush = function () { return __awaiter(void 0, void 0, void 0, functio
                 params = {
                     msgtype: 'text',
                     text: {
-                        content: '今日推送数据有误，随机挑选一名幸运观众【<@ZhangBin>】',
+                        content: '今日数据有误，随机挑选一名幸运儿【<@ZhangBin>】',
                     }
                 };
                 axios_1.default.post('https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=76fc80cd-9273-4232-8e11-44f6c0147342', params);
