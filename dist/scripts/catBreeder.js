@@ -45,7 +45,7 @@ var dayjs_1 = __importDefault(require("dayjs"));
 var database_1 = __importDefault(require("../database/database"));
 var today = dayjs_1.default().format('YYYY-MM-DD');
 var messagePush = function () { return __awaiter(void 0, void 0, void 0, function () {
-    var database, query, result, userId, breederQuery, breederResult, breederUserId, params, e_1, params;
+    var database, query, result, userId, breederQuery, breederResult, breederUserId, params, e_1;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
@@ -71,14 +71,7 @@ var messagePush = function () { return __awaiter(void 0, void 0, void 0, functio
                 return [3 /*break*/, 4];
             case 3:
                 e_1 = _a.sent();
-                params = {
-                    msgtype: 'text',
-                    text: {
-                        content: '今日数据有误，随机挑选一名幸运儿【<@ZhangBin>】',
-                    }
-                };
-                axios_1.default.post('https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=76fc80cd-9273-4232-8e11-44f6c0147342', params);
-                return [3 /*break*/, 4];
+                throw e_1;
             case 4: return [2 /*return*/];
         }
     });
