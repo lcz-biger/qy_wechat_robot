@@ -86,7 +86,6 @@ var messagePush = function () { return __awaiter(void 0, void 0, void 0, functio
         }
     });
 }); };
-var mc_reminder_main_handler = function () {
+exports.mc_reminder_main_handler = function () {
     return messagePush();
 };
-exports.mc_reminder_main_handler = mc_reminder_main_handler;

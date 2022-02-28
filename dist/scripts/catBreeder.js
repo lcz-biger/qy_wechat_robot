@@ -62,9 +62,9 @@ var messagePush = function () { return __awaiter(void 0, void 0, void 0, functio
                 breederResult = (_a.sent()) || [[{}]];
                 breederUserId = breederResult[0][0].username;
                 params = {
-                    msgtype: 'text',
-                    text: {
-                        content: "\u4ECA\u65E5\u94F2\u5C4E\u5B98\u3010<@" + breederUserId + ">\u3011,\u8BB0\u5F97\u7528\u6E7F\u5DFE\u64E6\u64E6\u522B\u5885\u5730\u9762\uFF0C\u55B7\u55B7\u6D88\u6BD2\u6C34\u3002 \n\u8868\u683C\u5730\u5740\uFF1Ahttps://doc.weixin.qq.com/txdoc/word?scode=AN8AYAcVAAYFhfENK0AFIALwYWAFY&docid=w2_ABgALgYWAFY0Pz0LadSQECXlthS4V&type=0",
+                    msgtype: 'markdown',
+                    markdown: {
+                        content: "\u4ECA\u65E5\u94F2\u5C4E\u5B98\u3010<@" + breederUserId + ">\u3011\n >[<font color=\"warning\">\u70B9\u51FB\u524D\u5F80\u8BB0\u5F55 >>></font>](https://doc.weixin.qq.com/txdoc/word?scode=AN8AYAcVAAYFhfENK0AFIALwYWAFY&docid=w2_ABgALgYWAFY0Pz0LadSQECXlthS4V&type=0)",
                     }
                 };
                 axios_1.default.post('https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=76fc80cd-9273-4232-8e11-44f6c0147342', params);
@@ -76,7 +76,6 @@ var messagePush = function () { return __awaiter(void 0, void 0, void 0, functio
         }
     });
 }); };
-var cat_breeder_main_handler = function () {
+exports.cat_breeder_main_handler = function () {
     return messagePush();
 };
-exports.cat_breeder_main_handler = cat_breeder_main_handler;

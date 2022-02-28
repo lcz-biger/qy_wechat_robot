@@ -14,21 +14,14 @@ const messagePush: () => void = async () => {
     const breederResult: any = await database.query(breederQuery) || [[{}]]
     const breederUserId = breederResult[0][0].username
     const params = {
-      msgtype: 'text',
-      text: {
-        content: `今日铲屎官【<@${breederUserId}>】,记得用湿巾擦擦别墅地面，喷喷消毒水。 \n表格地址：https://doc.weixin.qq.com/txdoc/word?scode=AN8AYAcVAAYFhfENK0AFIALwYWAFY&docid=w2_ABgALgYWAFY0Pz0LadSQECXlthS4V&type=0`,
+      msgtype: 'markdown',
+      markdown: {
+        content: `今日铲屎官【<@${breederUserId}>】\n >[<font color="warning">点击前往记录 >>></font>](https://doc.weixin.qq.com/txdoc/word?scode=AN8AYAcVAAYFhfENK0AFIALwYWAFY&docid=w2_ABgALgYWAFY0Pz0LadSQECXlthS4V&type=0)`,
       }
     }
     axios.post('https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=76fc80cd-9273-4232-8e11-44f6c0147342', params)
   } catch (e) {
     throw e
-    // const params = {
-    //   msgtype: 'text',
-    //   text: {
-    //     content: '今日数据有误，随机挑选一名幸运儿【<@ZhangBin>】',
-    //   }
-    // }
-    // axios.post('https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=76fc80cd-9273-4232-8e11-44f6c0147342', params)
   }
 }
 
