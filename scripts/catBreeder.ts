@@ -20,6 +20,7 @@ const messagePush: () => void = async () => {
       }
     }
     axios.post('https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=76fc80cd-9273-4232-8e11-44f6c0147342', params)
+    // axios.post('https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=a3b13cae-91a0-4147-af2f-b50fcb939776', params)
   } catch (e) {
     throw e
   }
