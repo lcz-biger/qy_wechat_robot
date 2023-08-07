@@ -14,7 +14,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     function verb(n) { return function (v) { return step([n, v]); }; }
     function step(op) {
         if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
+        while (g && (g = 0, op[0] && (_ = 0)), _) try {
             if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
             if (y = 0, t) op = [op[0] & 2, t.value];
             switch (op[0]) {
@@ -43,37 +43,37 @@ exports.mc_reminder_main_handler = void 0;
 var axios_1 = __importDefault(require("axios"));
 var dayjs_1 = __importDefault(require("dayjs"));
 var database_1 = __importDefault(require("../database/database"));
-var today = dayjs_1.default().format('YYYY-MM-DD');
+var today = (0, dayjs_1.default)().format('YYYY-MM-DD');
 var messagePush = function () { return __awaiter(void 0, void 0, void 0, function () {
     var database, query, result, headId, frontId, endId, headQuery, headResult, headUserId, frontQuery, frontResult, frontUserId, endQuery, endResult, endUserId, dataSuccess, successText, errorText, params;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
                 database = new database_1.default();
-                query = "select * from mc where FROM_UNIXTIME(UNIX_TIMESTAMP(date), '%Y-%m-%d') = '" + today + "'";
+                query = "select * from mc where FROM_UNIXTIME(UNIX_TIMESTAMP(date), '%Y-%m-%d') = '".concat(today, "'");
                 return [4 /*yield*/, database.query(query)];
             case 1:
                 result = _a.sent();
                 headId = result[0][0].head_id;
                 frontId = result[0][0].front_id;
                 endId = result[0][0].end_id;
-                headQuery = "select * from users where id=" + headId;
+                headQuery = "select * from users where id=".concat(headId);
                 return [4 /*yield*/, database.query(headQuery)];
             case 2:
                 headResult = (_a.sent()) || [[{}]];
                 headUserId = headResult[0][0].username;
-                frontQuery = "select * from users where id=" + frontId;
+                frontQuery = "select * from users where id=".concat(frontId);
                 return [4 /*yield*/, database.query(frontQuery)];
             case 3:
                 frontResult = (_a.sent()) || [[{}]];
                 frontUserId = frontResult[0][0].username;
-                endQuery = "select * from users where id=" + endId;
+                endQuery = "select * from users where id=".concat(endId);
                 return [4 /*yield*/, database.query(endQuery)];
             case 4:
                 endResult = (_a.sent()) || [[{}]];
                 endUserId = endResult[0][0].username;
                 dataSuccess = headUserId && frontUserId && endUserId;
-                successText = "\u4ECA\u65E5(" + today + ")\u63A5\u53E3\u4EBA\u3010<@" + headUserId + ">\u3011\uFF0C\u524D\u7AEF\u8D1F\u8D23\u4EBA\u3010<@" + frontUserId + ">\u3011\uFF0C\u540E\u7AEF\u8D1F\u8D23\u4EBA\u3010<@" + endUserId + ">\u3011";
+                successText = "\u4ECA\u65E5(".concat(today, ")\u63A5\u53E3\u4EBA\u3010<@").concat(headUserId, ">\u3011\uFF0C\u524D\u7AEF\u8D1F\u8D23\u4EBA\u3010<@").concat(frontUserId, ">\u3011\uFF0C\u540E\u7AEF\u8D1F\u8D23\u4EBA\u3010<@").concat(endUserId, ">\u3011");
                 errorText = '推送数据有误，请检查数据库【<@MaoKaiDi>】';
                 params = {
                     msgtype: 'text',
@@ -86,6 +86,7 @@ var messagePush = function () { return __awaiter(void 0, void 0, void 0, functio
         }
     });
 }); };
-exports.mc_reminder_main_handler = function () {
+var mc_reminder_main_handler = function () {
     return messagePush();
 };
+exports.mc_reminder_main_handler = mc_reminder_main_handler;

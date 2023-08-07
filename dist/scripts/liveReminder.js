@@ -39,28 +39,51 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var promise_1 = __importDefault(require("mysql2/promise"));
-var Database = /** @class */ (function () {
-    function Database() {
-        this.connection = promise_1.default.createConnection({
-            host: 'rm-bp11yor291pf2of1duo.mysql.rds.aliyuncs.com',
-            user: 'robot',
-            database: 'robot',
-            password: 'sCnCi7Ym9cM2RpLq',
-            dateStrings: true,
-        });
-    }
-    // query查询
-    Database.prototype.query = function (query) {
-        return __awaiter(this, void 0, void 0, function () {
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.connection];
-                    case 1: return [2 /*return*/, (_a.sent()).query(query)];
-                }
-            });
-        });
-    };
-    return Database;
-}());
-exports.default = Database;
+exports.live_reminder_main_handler = void 0;
+var axios_1 = __importDefault(require("axios"));
+var dayjs_1 = __importDefault(require("dayjs"));
+var database_1 = __importDefault(require("../database/database"));
+var today = (0, dayjs_1.default)().format('YYYY-MM-DD');
+var messagePush = function () { return __awaiter(void 0, void 0, void 0, function () {
+    var database, query, result, userId, liveQuery, liveResult, liveUserId, nextUserId, nextDate, nextLiveQuery, nextLiveResult, nextLiveUserId, params, e_1;
+    return __generator(this, function (_a) {
+        switch (_a.label) {
+            case 0:
+                _a.trys.push([0, 4, , 5]);
+                database = new database_1.default();
+                query = "select * from live where FROM_UNIXTIME(UNIX_TIMESTAMP(date), '%Y-%m-%d') >= ".concat(today, " order by date limit 2");
+                return [4 /*yield*/, database.query(query)];
+            case 1:
+                result = (_a.sent()) || [[{}]];
+                userId = result[0][0].user_id;
+                liveQuery = "select * from all_users where id=".concat(userId);
+                return [4 /*yield*/, database.query(liveQuery)];
+            case 2:
+                liveResult = (_a.sent()) || [[{}]];
+                liveUserId = liveResult[0][0].uuid;
+                nextUserId = result[0][1].user_id;
+                nextDate = result[0][1].date;
+                nextLiveQuery = "select * from all_users where id=".concat(nextUserId);
+                return [4 /*yield*/, database.query(nextLiveQuery)];
+            case 3:
+                nextLiveResult = (_a.sent()) || [[{}]];
+                nextLiveUserId = nextLiveResult[0][0].uuid;
+                params = {
+                    msgtype: 'text',
+                    text: {
+                        content: "\u4ECA\u5929\u7684\u4E3B\u64AD\u662F\u3010<@".concat(liveUserId, ">\u3011\uFF0C\u8BF7\u544A\u77E5\u4E3B\u9898\u3002\n\u4E0B\u4E00\u573A\u7684\u4E3B\u64AD\u3010<@").concat(nextLiveUserId, ">\u3011\uFF0C\u76F4\u64AD\u65F6\u95F4\u4E3A ").concat(nextDate, " \uFF0C\u8BF7\u505A\u597D\u51C6\u5907\u3002"),
+                    }
+                };
+                axios_1.default.post('https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=4530800e-1d69-43b2-b2e5-edbbe2245fe5', params);
+                return [3 /*break*/, 5];
+            case 4:
+                e_1 = _a.sent();
+                throw e_1;
+            case 5: return [2 /*return*/];
+        }
+    });
+}); };
+var live_reminder_main_handler = function () {
+    return messagePush();
+};
+exports.live_reminder_main_handler = live_reminder_main_handler;

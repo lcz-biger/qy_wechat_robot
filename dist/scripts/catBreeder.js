@@ -14,7 +14,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     function verb(n) { return function (v) { return step([n, v]); }; }
     function step(op) {
         if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
+        while (g && (g = 0, op[0] && (_ = 0)), _) try {
             if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
             if (y = 0, t) op = [op[0] & 2, t.value];
             switch (op[0]) {
@@ -43,7 +43,7 @@ exports.cat_breeder_main_handler = void 0;
 var axios_1 = __importDefault(require("axios"));
 var dayjs_1 = __importDefault(require("dayjs"));
 var database_1 = __importDefault(require("../database/database"));
-var today = dayjs_1.default().format('YYYY-MM-DD');
+var today = (0, dayjs_1.default)().format('YYYY-MM-DD');
 var messagePush = function () { return __awaiter(void 0, void 0, void 0, function () {
     var database, query, result, userId, breederQuery, breederResult, breederUserId, params, e_1;
     return __generator(this, function (_a) {
@@ -51,12 +51,12 @@ var messagePush = function () { return __awaiter(void 0, void 0, void 0, functio
             case 0:
                 _a.trys.push([0, 3, , 4]);
                 database = new database_1.default();
-                query = "select * from cat where FROM_UNIXTIME(UNIX_TIMESTAMP(date), '%Y-%m-%d') = '" + today + "'";
+                query = "select * from cat where FROM_UNIXTIME(UNIX_TIMESTAMP(date), '%Y-%m-%d') = '".concat(today, "'");
                 return [4 /*yield*/, database.query(query)];
             case 1:
                 result = (_a.sent()) || [[{}]];
                 userId = result[0][0].user_id;
-                breederQuery = "select * from users where id=" + userId;
+                breederQuery = "select * from users where id=".concat(userId);
                 return [4 /*yield*/, database.query(breederQuery)];
             case 2:
                 breederResult = (_a.sent()) || [[{}]];
@@ -64,7 +64,7 @@ var messagePush = function () { return __awaiter(void 0, void 0, void 0, functio
                 params = {
                     msgtype: 'markdown',
                     markdown: {
-                        content: "\u4ECA\u65E5\u94F2\u5C4E\u5B98\u3010<@" + breederUserId + ">\u3011\n >[<font color=\"warning\">\u70B9\u51FB\u524D\u5F80\u8BB0\u5F55 >>></font>](https://doc.weixin.qq.com/txdoc/word?scode=AN8AYAcVAAYFhfENK0AFIALwYWAFY&docid=w2_ABgALgYWAFY0Pz0LadSQECXlthS4V&type=0)",
+                        content: "\u4ECA\u65E5\u94F2\u5C4E\u5B98\u3010<@".concat(breederUserId, ">\u3011\n >[<font color=\"warning\">\u70B9\u51FB\u524D\u5F80\u8BB0\u5F55 >>></font>](https://doc.weixin.qq.com/txdoc/word?scode=AN8AYAcVAAYFhfENK0AFIALwYWAFY&docid=w2_ABgALgYWAFY0Pz0LadSQECXlthS4V&type=0)"),
                     }
                 };
                 axios_1.default.post('https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=76fc80cd-9273-4232-8e11-44f6c0147342', params);
@@ -76,6 +76,7 @@ var messagePush = function () { return __awaiter(void 0, void 0, void 0, functio
         }
     });
 }); };
-exports.cat_breeder_main_handler = function () {
+var cat_breeder_main_handler = function () {
     return messagePush();
 };
+exports.cat_breeder_main_handler = cat_breeder_main_handler;
