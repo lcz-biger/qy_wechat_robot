@@ -51,7 +51,7 @@ var messagePush = function () { return __awaiter(void 0, void 0, void 0, functio
             case 0:
                 _a.trys.push([0, 4, , 5]);
                 database = new database_1.default();
-                query = "select * from live where FROM_UNIXTIME(UNIX_TIMESTAMP(date), '%Y-%m-%d') >= ".concat(today, " order by date limit 2");
+                query = "select * from live where FROM_UNIXTIME(UNIX_TIMESTAMP(date), '%Y-%m-%d') >= '".concat(today, "' order by date limit 2");
                 return [4 /*yield*/, database.query(query)];
             case 1:
                 result = (_a.sent()) || [[{}]];
