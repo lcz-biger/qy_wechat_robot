@@ -9,6 +9,10 @@ const messagePush: () => void = async () => {
     const database = new Database()
     const query = `select * from live where FROM_UNIXTIME(UNIX_TIMESTAMP(date), '%Y-%m-%d') >= '${today}' order by date limit 2`
     const result: any = await database.query(query) || [[{}]]
+    const day = result[0][0].date
+    if (day !== today) {
+      return
+    }
     const userId = result[0][0].user_id
     const liveQuery = `select * from all_users where id=${userId}`
     const liveResult: any = await database.query(liveQuery) || [[{}]]
