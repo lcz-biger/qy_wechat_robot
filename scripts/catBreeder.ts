@@ -16,7 +16,7 @@ const messagePush: () => void = async () => {
     const params = {
       msgtype: 'markdown',
       markdown: {
-        content: `今日铲屎官【<@${breederUserId}>】\n >[<font color="warning">点击前往记录 >>></font>](https://doc.weixin.qq.com/txdoc/word?scode=AN8AYAcVAAYFhfENK0AFIALwYWAFY&docid=w2_ABgALgYWAFY0Pz0LadSQECXlthS4V&type=0)`,
+        content: `今日铲屎官<@${breederUserId}>`,
       }
     }
     axios.post('https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=76fc80cd-9273-4232-8e11-44f6c0147342', params)
@@ -25,7 +25,6 @@ const messagePush: () => void = async () => {
     throw e
   }
 }
-
 export const cat_breeder_main_handler = () => {
   return messagePush()
 }
